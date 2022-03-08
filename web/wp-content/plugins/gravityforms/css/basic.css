@@ -1825,11 +1825,6 @@ html[dir="rtl"] .gform_wrapper.gravity-theme .ginput_complex:not(.ginput_contain
 		padding-right: 16px;
 	}
 
-	html[dir="rtl"] .gform_wrapper.gravity-theme .ginput_container_address.has_street2:not(.has_street) span:not(.ginput_full):nth-of-type(2n), html[dir="rtl"] .gform_wrapper.gravity-theme .ginput_container_address.has_street:not(.has_street2) span:not(.ginput_full):nth-of-type(2n), html[dir="rtl"] .gform_wrapper.gravity-theme .ginput_container_address:not(.has_street):not(.has_street2) span:not(.ginput_full):nth-of-type(2n+1), html[dir="rtl"] .gform_wrapper.gravity-theme .ginput_container_address.has_street.has_street2 span:not(.ginput_full):nth-of-type(2n+1) {
-		padding-right: 0;
-		padding-left: 16px;
-	}
-
 	html[dir="rtl"] .gform_wrapper.gravity-theme .gform_show_password {
 		right: unset;
 		left: 8px;

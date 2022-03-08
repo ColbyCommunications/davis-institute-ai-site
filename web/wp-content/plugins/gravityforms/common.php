@@ -166,11 +166,16 @@ class GFCommon {
 	}
 
 	public static function recursive_add_index_file( $dir ) {
-		if ( ! is_dir( $dir ) || is_link( $dir ) ) {
+		$dir = untrailingslashit( $dir );
+		if ( ! is_dir( $dir ) || ! wp_is_writable( $dir ) || is_link( $dir ) ) {
+			GFCommon::log_debug( __METHOD__ . '(): Path ' . $dir . ' is not a valid path or is not writable' );
+
 			return;
 		}
 
 		if ( ! ( $dp = opendir( $dir ) ) ) {
+			GFCommon::log_debug( __METHOD__ . '(): Unable to open directory: ' . $dir );
+
 			return;
 		}
 
@@ -178,7 +183,10 @@ class GFCommon {
 		set_error_handler( '__return_false', E_ALL );
 
 		//creates an empty index.html file
-		if ( $f = fopen( $dir . '/index.html', 'w' ) ) {
+		$index_file_path = $dir . '/index.html';
+		GFCommon::log_debug( __METHOD__ . '(): Adding file: ' . $index_file_path );
+
+		if ( $f = fopen( $index_file_path, 'w' ) ) {
 			fclose( $f );
 		}
 
@@ -2901,7 +2909,6 @@ Content-Type: text/html;
 		$options['headers'] = array(
 			'Content-Type' => 'application/x-www-form-urlencoded; charset=' . get_option( 'blog_charset' ),
 			'User-Agent'   => 'WordPress/' . get_bloginfo( 'version' ),
-			'Referer'      => get_bloginfo( 'url' )
 		);
 
 		$raw_response = self::post_to_manager( 'api.php', "op=get_key&key={$key}", $options );
@@ -2988,7 +2995,6 @@ Content-Type: text/html;
 			$options['headers'] = array(
 				'Content-Type' => 'application/x-www-form-urlencoded; charset=' . get_option( 'blog_charset' ),
 				'User-Agent'   => 'WordPress/' . get_bloginfo( 'version' ),
-				'Referer'      => get_bloginfo( 'url' ),
 			);
 			$options['body']    = self::get_remote_post_params();
 			$options['timeout'] = 15;
@@ -3029,7 +3035,6 @@ Content-Type: text/html;
 			require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 		}
 		$plugin_list = get_plugins();
-		$site_url    = get_bloginfo( 'url' );
 		$plugins     = array();
 
 		$active_plugins = get_option( 'active_plugins' );
@@ -3155,7 +3160,6 @@ Content-Type: text/html;
 			'Content-Type'   => 'application/x-www-form-urlencoded; charset=' . get_option( 'blog_charset' ),
 			'Content-Length' => strlen( $body ),
 			'User-Agent'     => 'WordPress/' . get_bloginfo( 'version' ),
-			'Referer'        => get_bloginfo( 'url' )
 		);
 
 		$raw_response = self::post_to_manager( 'message.php', GFCommon::get_remote_request_params(), $options );
@@ -3187,6 +3191,15 @@ Content-Type: text/html;
 	 * @return array|WP_Error
 	 */
 	public static function post_to_manager( $file, $query, $options ) {
+
+		if ( ! isset( $options['headers'] ) ) {
+			$options['headers'] = array();
+		}
+		// Forcing Referer to the unfiltered home url when sending requests to gravity manager.
+		$options['headers']['Referer'] = get_option( 'home' );
+
+		// Sending filtered version of URL so that gravity manager can remove duplicate URLs when filtered and unfiltered URLs are different.
+		$options['headers']['Filtered-Site-URL'] = get_bloginfo( 'url' );
 
 		$request_url = GRAVITY_MANAGER_URL . '/' . $file . '?' . $query;
 		self::log_debug( __METHOD__ . '(): endpoint: ' . $request_url );
@@ -3364,8 +3377,28 @@ Content-Type: text/html;
 		}
 	}
 
-	public static function parse_date( $date, $format = 'mdy' ) {
-		$date_info = array();
+	/**
+	 * Creates an array from the given value using year, month, and day as keys.
+	 *
+	 * @since unknown
+	 * @since 2.5.17 Added the $return_keys_on_empty param.
+	 *
+	 * @param string|array $date                 The date string or array to be parsed.
+	 * @param string       $format               The value of the field dateFormat property.
+	 * @param bool         $return_keys_on_empty Indicates if the returned array should include the keys with empty values when passed an empty date.
+	 *
+	 * @return array
+	 */
+	public static function parse_date( $date, $format = 'mdy', $return_keys_on_empty = false ) {
+		$date_info = array(
+			'year'  => '',
+			'month' => '',
+			'day'   => '',
+		);
+
+		if ( empty( $date ) || self::is_empty_array( $date ) ) {
+			return $return_keys_on_empty ? $date_info : array();
+		}
 
 		$position = substr( $format, 0, 3 );
 
@@ -6067,7 +6100,19 @@ Content-Type: text/html;
 
 				$field_filter['operator'] = $operator;
 				$field_filter['value']    = $val;
-				$field_filters[]          = $field_filter;
+
+				/**
+				 * Enables the filter settings for the form fields retrieved from $_POST to be modified.
+				 *
+				 * @since 2.5.17
+				 *
+				 * @param array    $field_filter The field filters.
+				 * @param array    $form         The form object the filter settings have been prepared for.
+				 * @param GF_Field $field        The current field being evaluated.
+				 */
+				$field_filter = apply_filters( 'gform_field_filter_from_post', $field_filter, $form, $field );
+
+				$field_filters[] = $field_filter;
 			}
 		}
 		$field_filters['mode'] = rgpost( 'mode' );
@@ -7543,7 +7588,7 @@ class GFCache {
  */
 class GF_Cache {
 	public function get( $key, &$found = null, $is_persistent = true ) {
-		return GFCache::get( $key, $found, $is_persisent );
+		return GFCache::get( $key, $found, $is_persistent );
 	}
 
 	public function set( $key, $data, $is_persistent = false, $expiration_seconds = 0 ) {
@@ -7555,7 +7600,7 @@ class GF_Cache {
 	}
 
 	public function flush( $flush_persistent = false ) {
-		return GFCache::flush( $flus_persistent );
+		return GFCache::flush( $flush_persistent );
 	}
 
 }

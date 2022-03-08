@@ -304,9 +304,16 @@
 			width: 100%;
 		}
 
-.gform_wrapper.gravity-theme .ginput_container_address span {
-		flex: 0 0 50%;
+.gform_wrapper.gravity-theme .ginput_container_address {
+		margin-left: -1%;
+		margin-right: -1%;
 	}
+
+.gform_wrapper.gravity-theme .ginput_container_address span {
+			flex: 0 0 50%;
+			padding-left: 0.9804%;
+			padding-right: 0.9804%;
+		}
 
 .gform_wrapper.gravity-theme .gf_browser_ie .ginput_container_address span:not(.ginput_full) {
 		flex: 0 0 49.3%;
@@ -322,27 +329,17 @@
 			padding-right: 0;
 		}
 
-		.gform_wrapper.gravity-theme .ginput_container_address .ginput_left {
-			padding-right: 1%;
-		}
-
-		.gform_wrapper.gravity-theme .ginput_container_address .ginput_right {
-			padding-left: 1%;
-		}
-
 		/* Make sure all fields but the last one have a bottom margin so there's space between them */
 		.gform_wrapper.gravity-theme .ginput_full:not(:last-of-type), .gform_wrapper.gravity-theme .ginput_container_address span:not(.ginput_full):not(:last-of-type):not(:nth-last-of-type(2)) {
 			margin-bottom: 8px;
 		}
-			html[dir=rtl] .gform_wrapper.gravity-theme .ginput_complex:not(.ginput_container_address) span:not([style*="display:none"]):not(.ginput_full) ~ span:not(.ginput_full), html[dir=rtl] .gform_wrapper.gravity-theme .ginput_complex:not(.ginput_container_address) fieldset:not([style*="display:none"]):not(.ginput_full) ~ span:not(.ginput_full) {
-				padding-right: 1%;
-			}
-
-			html[dir=rtl] .gform_wrapper.gravity-theme .ginput_container_address .ginput_left {
+			html[dir=rtl] .gform_wrapper.gravity-theme .ginput_complex:not(.ginput_container_address) span:not([style*="display:none"]):not(.ginput_full), html[dir=rtl] .gform_wrapper.gravity-theme .ginput_complex:not(.ginput_container_address) fieldset:not([style*="display:none"]):not(.ginput_full) {
 				padding-left: 1%;
+				padding-right: 0;
 			}
 
-			html[dir=rtl] .gform_wrapper.gravity-theme .ginput_container_address .ginput_right {
+			html[dir=rtl] .gform_wrapper.gravity-theme .ginput_complex:not(.ginput_container_address) span:not([style*="display:none"]):not(.ginput_full) ~ span:not(.ginput_full), html[dir=rtl] .gform_wrapper.gravity-theme .ginput_complex:not(.ginput_container_address) fieldset:not([style*="display:none"]):not(.ginput_full) ~ span:not(.ginput_full) {
+				padding-left: 0;
 				padding-right: 1%;
 			}
 
@@ -354,6 +351,10 @@
 		flex: 0 0 100%;
 		padding-left: 0;
 		margin-bottom: 8px;
+	}
+
+	.gform_wrapper.gravity-theme .ginput_complex.ginput_container_address span {
+		padding-left: 0.9804%;
 	}
 
 }
@@ -432,6 +433,20 @@
 		flex: 1 1 100%;
 	}
 
+.gform_wrapper.gravity-theme fieldset.ginput_cardinfo_left {
+		display: flex;
+		flex-direction: column;
+	}
+
+.gform_wrapper.gravity-theme fieldset.ginput_cardinfo_left legend {
+			float: left;
+			padding-top: 5px;
+		}
+
+.gform_wrapper.gravity-theme .field_sublabel_below fieldset.ginput_cardinfo_left {
+		flex-direction: column-reverse;
+	}
+
 html[dir="rtl"] .gform_wrapper.gravity-theme .ginput_card_expiration_month {
 		margin-left: 16px;
 		margin-right: 0;
@@ -448,6 +463,10 @@ html[dir="rtl"] .gform_wrapper.gravity-theme .gfield_creditcard_warning .gfield_
 		background-size: 24px 16px;
 		background-repeat: no-repeat;
 		background-position: right 3.2px;
+	}
+
+html[dir="rtl"] .gform_wrapper.gravity-theme fieldset.ginput_cardinfo_left {
+		display: flex;
 	}
 
 @media (max-width: 640px) {

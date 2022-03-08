@@ -1,17 +1,48 @@
-### 2.5.15.3
-- Fixed issue which caused multisites to experience a fatal error on plugin activation.
+### 2.5.16.4
+- Fixed an issue that causes datepicker icons to break in date settings fields.
+- Fixed an issue that causes the address field inputs to be misaligned when hiding sub-fields.
+- API: Added the [gform_settings_display_license_details](https://docs.gravityforms.com/gform_settings_display_license_details/) filter.
+- API: Added the [gform_plugin_settings_fields](https://docs.gravityforms.com/gform_plugin_settings_fields/) filter.
 
-### 2.5.15.2
-- Fixed issue with Dynamic Field Map on some add-ons including HubSpot Add-On and User Registration Add-On.
-- Fixed issue with form import not properly sanitizing JSON string in some cases.
+### 2.5.16.3
+- Fixed an issue where checkboxes without labels behave as if they are checked by default.
+- Fixed an issue which causes some file uploads to fail when chunking is enabled.
+- Fixed a fatal error with PHP 8 when editing an entry that includes an empty date drop down field.
+- Fixed an issue with the license validation request that resulted in extra sites being counted towards a license's site limit in certain situations.
+
+### 2.5.16.2
+- Updated the minimum WordPress version (for support) on the System Status page to 5.8.
+- Fixed an issue where the time field sub-label placement setting of hidden is not hiding the sub-labels.
+- Fixed an issue with the address field where the zip code autocomplete attribute does not appear if the sub-labels are above the inputs
+- API: Added the gform_field_filter_from_post filter to allow filter settings for the form fields, entry properties, and entry meta used in conditional logic for entry export, entry list, results pages, and some add-on to be overridden when the filters are being processed. Complements the *[gform_field_filters](https://docs.gravityforms.com/gform_field_filters/)* filter.
+
+### 2.5.16.1
+- Fixed a typo in the visibility class for fields in the form editor.
+- Fixed an issue where the next, previous, and submit buttons are not showing the pointer when hovering over them.
+- Fixed an issue where the aria labels for new rows in the list field do not match column headers.
+- Fixed an issue where the show country field toggle for the address field is not being respected in the form editor.
+- Fixed an issue where license validation was being performed too many times when license key was left blank.
+- Fixed an issue where the all_fields merge tag renders the radio choice value instead of choice label when the value is 0.
+- Fixed an issue where long forms with conditional logic can become slow and unresponsive.
+- API: Fixed an issue where the form editor tooltip is rendering CSS classes incorrectly.
+- AF: Fixed an issue with the "select" settings field where empty option groups are being rendered as selectable options.
+
+### 2.5.16 | 2022-01-11
+- Fixed an issue where the select entry table columns in RTL are not displaying properly.
+- Fixed an issue where the credit card field expiration date fieldset label is not output as legend.
+- Fixed an issue where a PHP warning appears in the logs after running the daily cron.
+- Fixed an issue with total field not displaying correct amount under certain conditions.
+- Fixed an issue where the validation div on the legacy file uploads field is showing when empty.
+- Fixed an issue with gform_conditional_logic_operators filter passing the incorrect field ID.
+- Fixed an issue which causes multisites to experience a fatal error on plugin activation.
+- Fixed an issue with Dynamic Field Map on some add-ons including HubSpot Add-On and User Registration Add-On.
+- Fixed an issue with form import not properly sanitizing JSON string in some cases.
 - Fixed an issue where uploaded files are not deleted on entry deletion if a custom upload path is used.
-
-
-### 2.5.15.1
-- Fixed performance issue with Generic Map settings field.
-- Fixed issue with Generic Map and Dynamic Field Map not being able to filter the value drop down to include or exclude field types.
-- Fixed issue with Generic Map settings field not being able to specify a custom list of choices for mapping.
+- Fixed an issue with Generic Map and Dynamic Field Map not being able to filter the value drop down to include or exclude field types.
+- Fixed an issue with Generic Map settings field not being able to specify a custom list of choices for mapping.
 - Fixed an issue where files uploaded via the multi-file upload field are corrupted when chunking is enabled using [gform_plupload_settings](https://docs.gravityforms.com/gform_plupload_settings/).
+- Fixed performance issue with Generic Map settings field.
+- Fixed fatal error in Generic Map settings field that can happen under certain conditions.
 
 ### 2.5.15 | 2021-11-16
 - Added a prefix to section IDs in the Settings API to make it less likely that sections and fields will have the same ID.

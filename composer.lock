@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c333641a145efbeb2a4dd83142e43ff2",
+    "content-hash": "4a9f3f30485622a963ed64379e35da24",
     "packages": [
         {
             "name": "appsero/client",
@@ -2034,15 +2034,15 @@
         },
         {
             "name": "wpackagist-plugin/capability-manager-enhanced",
-            "version": "2.3.2",
+            "version": "2.3.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/capability-manager-enhanced/",
-                "reference": "tags/2.3.2"
+                "reference": "tags/2.3.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/capability-manager-enhanced.2.3.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/capability-manager-enhanced.2.3.4.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2254,15 +2254,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-saml-auth",
-            "version": "1.2.7",
+            "version": "2.0.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-saml-auth/",
-                "reference": "tags/1.2.7"
+                "reference": "tags/2.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-saml-auth.1.2.7.zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-saml-auth.2.0.1.zip",
                 "reference": null,
                 "shasum": null
             },
