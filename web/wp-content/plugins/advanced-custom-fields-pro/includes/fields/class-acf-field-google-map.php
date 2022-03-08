@@ -301,8 +301,6 @@ if ( ! class_exists( 'acf_field_google_map' ) ) :
 			// Return default.
 			return false;
 		}
-<<<<<<< HEAD
-=======
 
 		/**
 		 * Return the schema array for the REST API.
@@ -379,7 +377,6 @@ if ( ! class_exists( 'acf_field_google_map' ) ) :
 
 			return acf_format_numerics( $value );
 		}
->>>>>>> ebd8ede9db297d389632fa6182d8a7e2c2e19490
 	}
 
 
