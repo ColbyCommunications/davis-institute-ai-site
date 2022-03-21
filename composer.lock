@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "4a9f3f30485622a963ed64379e35da24",
+    "content-hash": "e15bbd6a2ecb37d4d349b0ce0ffd2e49",
     "packages": [
         {
             "name": "appsero/client",
