@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "9a91610e934fef4fde061ec368fb2379",
+    "content-hash": "e20ca27c400449e2739b562cb11e6eb5",
     "packages": [
         {
             "name": "appsero/client",
@@ -2122,15 +2122,15 @@
         },
         {
             "name": "wpackagist-plugin/cloudflare",
-            "version": "4.8.2",
+            "version": "4.8.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/cloudflare/",
-                "reference": "tags/4.8.2"
+                "reference": "tags/4.8.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/cloudflare.4.8.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/cloudflare.4.8.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2162,15 +2162,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "3.6.0",
+            "version": "3.6.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/3.6.0"
+                "reference": "tags/3.6.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.3.6.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/elementor.3.6.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2242,15 +2242,15 @@
         },
         {
             "name": "wpackagist-plugin/siteimprove",
-            "version": "1.2.1",
+            "version": "1.2.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/siteimprove/",
-                "reference": "tags/1.2.1"
+                "reference": "tags/1.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/siteimprove.1.2.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/siteimprove.1.2.0.zip",
                 "reference": null,
                 "shasum": null
             },
