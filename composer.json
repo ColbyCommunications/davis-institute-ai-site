@@ -25,7 +25,7 @@
         "wp-graphql/wp-graphiql": "^1.0",
         "pristas-peter/wp-graphql-gutenberg": "^0.3",
         "wpackagist-plugin/wp-saml-auth": "^2",
-        "wpackagist-plugin/siteimprove": "1.2",
+        "wpackagist-plugin/siteimprove": "^1",
         "wpackagist-plugin/query-monitor": "^3.7"
     },
     "authors": [
