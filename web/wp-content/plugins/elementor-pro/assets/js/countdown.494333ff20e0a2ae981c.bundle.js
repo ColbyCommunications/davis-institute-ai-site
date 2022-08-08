@@ -1,5 +1,9 @@
+<<<<<<< HEAD:web/wp-content/plugins/elementor-pro/assets/js/countdown.494333ff20e0a2ae981c.bundle.js
 /*! elementor-pro - v3.6.4 - 15-03-2022 */
 "use strict";
+=======
+/*! elementor-pro - v3.4.1 - 01-09-2021 */
+>>>>>>> 59e350e52aa59b5c4ddf95de67c26f79ffd0ba00:plugins/elementor-pro/assets/js/countdown.6b48da864045c1ea0edd.bundle.js
 (self["webpackChunkelementor_pro"] = self["webpackChunkelementor_pro"] || []).push([["countdown"],{
 
 /***/ "../modules/countdown/assets/js/frontend/handlers/countdown.js":

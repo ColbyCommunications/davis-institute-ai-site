@@ -1,5 +1,9 @@
+<<<<<<< HEAD:web/wp-content/plugins/elementor-pro/assets/js/animated-headline.9d0deabe7a095aba599a.bundle.js
 /*! elementor-pro - v3.6.4 - 15-03-2022 */
 "use strict";
+=======
+/*! elementor-pro - v3.4.1 - 01-09-2021 */
+>>>>>>> 59e350e52aa59b5c4ddf95de67c26f79ffd0ba00:plugins/elementor-pro/assets/js/animated-headline.0ccd23763059df7affcc.bundle.js
 (self["webpackChunkelementor_pro"] = self["webpackChunkelementor_pro"] || []).push([["animated-headline"],{
 
 /***/ "../assets/dev/js/frontend/utils/scroll.js":

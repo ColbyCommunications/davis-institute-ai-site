@@ -1,5 +1,9 @@
+<<<<<<< HEAD:web/wp-content/plugins/elementor-pro/assets/js/popup.4567e25e40bd00bdcd10.bundle.js
 /*! elementor-pro - v3.6.4 - 15-03-2022 */
 "use strict";
+=======
+/*! elementor-pro - v3.4.1 - 01-09-2021 */
+>>>>>>> 59e350e52aa59b5c4ddf95de67c26f79ffd0ba00:plugins/elementor-pro/assets/js/popup.5ddbdd46f21fc221d760.bundle.js
 (self["webpackChunkelementor_pro"] = self["webpackChunkelementor_pro"] || []).push([["popup"],{
 
 /***/ "../modules/popup/assets/js/frontend/handlers/forms-action.js":

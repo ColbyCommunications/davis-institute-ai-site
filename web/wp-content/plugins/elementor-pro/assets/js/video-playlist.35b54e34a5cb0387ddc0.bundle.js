@@ -1,5 +1,9 @@
+<<<<<<< HEAD:web/wp-content/plugins/elementor-pro/assets/js/video-playlist.35b54e34a5cb0387ddc0.bundle.js
 /*! elementor-pro - v3.6.4 - 15-03-2022 */
 "use strict";
+=======
+/*! elementor-pro - v3.4.1 - 01-09-2021 */
+>>>>>>> 59e350e52aa59b5c4ddf95de67c26f79ffd0ba00:plugins/elementor-pro/assets/js/video-playlist.f55c7066f7ec3a866539.bundle.js
 (self["webpackChunkelementor_pro"] = self["webpackChunkelementor_pro"] || []).push([["video-playlist"],{
 
 /***/ "../modules/video-playlist/assets/js/frontend/base-tabs.js":
@@ -750,23 +754,22 @@ function toggleInnerTabs(event, clickedTab, widgetObject) {
 }
 
 function handleInnerTabs(event, widgetObject) {
-  const clickedTarget = event.target;
-  const clickedTagType = clickedTarget.tagName; // Handle click on tab on desktop mode.
+  event.preventDefault(); // Handle click on tab on mobile mode.
 
-  if (clickedTarget.classList.contains('e-inner-tab-title-text')) {
-    event.preventDefault();
-    const $clickedTab = jQuery(clickedTarget).parent('.e-inner-tab-title');
+  if (event.target.classList.contains('e-tab-mobile-title')) {
+    const $clickedTab = jQuery(event.target);
     toggleInnerTabs(event, $clickedTab, widgetObject);
-  } // Handle click on tab on mobile mode.
+    return;
+  } // Handle click on tab on Desktop mode.
 
 
-  if (clickedTarget.classList.contains('e-tab-mobile-title')) {
-    const $clickedTab = jQuery(clickedTarget);
+  if ('A' === event.target.tagName) {
+    const $clickedTab = jQuery(event.target).parent('.e-inner-tab-title');
     toggleInnerTabs(event, $clickedTab, widgetObject);
   } // Handle click on show-less buttons in tab content.
 
 
-  if ('button' === clickedTagType.toLowerCase()) {
+  if ('BUTTON' === event.target.tagName) {
     onTabContentButtonsClick(event, widgetObject);
   }
 }
@@ -1426,4 +1429,8 @@ function setVideoParams(playlistId, playlistItemsArray, videoId) {
 /***/ })
 
 }]);
+<<<<<<< HEAD:web/wp-content/plugins/elementor-pro/assets/js/video-playlist.35b54e34a5cb0387ddc0.bundle.js
 //# sourceMappingURL=video-playlist.35b54e34a5cb0387ddc0.bundle.js.map
+=======
+//# sourceMappingURL=video-playlist.f55c7066f7ec3a866539.bundle.js.map
+>>>>>>> 59e350e52aa59b5c4ddf95de67c26f79ffd0ba00:plugins/elementor-pro/assets/js/video-playlist.f55c7066f7ec3a866539.bundle.js

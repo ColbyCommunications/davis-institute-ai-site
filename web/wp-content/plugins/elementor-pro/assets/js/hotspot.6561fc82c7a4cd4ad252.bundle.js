@@ -1,5 +1,9 @@
+<<<<<<< HEAD:web/wp-content/plugins/elementor-pro/assets/js/hotspot.6561fc82c7a4cd4ad252.bundle.js
 /*! elementor-pro - v3.6.4 - 15-03-2022 */
 "use strict";
+=======
+/*! elementor-pro - v3.4.1 - 01-09-2021 */
+>>>>>>> 59e350e52aa59b5c4ddf95de67c26f79ffd0ba00:plugins/elementor-pro/assets/js/hotspot.66952182f9ae91b6896c.bundle.js
 (self["webpackChunkelementor_pro"] = self["webpackChunkelementor_pro"] || []).push([["hotspot"],{
 
 /***/ "../modules/hotspot/assets/js/frontend/handlers/hotspot.js":

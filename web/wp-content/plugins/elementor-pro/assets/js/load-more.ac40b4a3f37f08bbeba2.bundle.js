@@ -1,5 +1,9 @@
+<<<<<<< HEAD:web/wp-content/plugins/elementor-pro/assets/js/load-more.ac40b4a3f37f08bbeba2.bundle.js
 /*! elementor-pro - v3.6.4 - 15-03-2022 */
 "use strict";
+=======
+/*! elementor-pro - v3.4.1 - 01-09-2021 */
+>>>>>>> 59e350e52aa59b5c4ddf95de67c26f79ffd0ba00:plugins/elementor-pro/assets/js/load-more.ed8a8caa6411cba8ed86.bundle.js
 (self["webpackChunkelementor_pro"] = self["webpackChunkelementor_pro"] || []).push([["load-more"],{
 
 /***/ "../modules/posts/assets/js/frontend/handlers/load-more.js":
@@ -156,17 +160,23 @@ class LoadMore extends elementorModules.frontend.handlers.Base {
   }
 
   handleSuccessFetch(result) {
+<<<<<<< HEAD:web/wp-content/plugins/elementor-pro/assets/js/load-more.ac40b4a3f37f08bbeba2.bundle.js
     this.handleUiAfterLoading(); // Grabbing only the new articles from the response without the existing once (prevent posts duplication).
 
     const posts = result.querySelectorAll(`[data-id="${this.elementId}"] .elementor-posts-container > article`);
     const nextPageUrl = result.querySelector('.e-load-more-anchor').getAttribute('data-next-page'); // Converting HTMLCollection to an Array and iterate it.
+=======
+    this.handleUiAfterLoading();
+    const html = document.createElement('div');
+    html.innerHTML = result.content;
+    const posts = html.querySelectorAll('.elementor-posts-container > article'); // Converting HTMLCollection to an Array and iterate it.
+>>>>>>> 59e350e52aa59b5c4ddf95de67c26f79ffd0ba00:plugins/elementor-pro/assets/js/load-more.ed8a8caa6411cba8ed86.bundle.js
 
     const postsHTML = [...posts].reduce((accumulator, post) => {
       return accumulator + post.outerHTML;
     }, '');
     this.elements.postsContainer.insertAdjacentHTML('beforeend', postsHTML);
     this.elements.loadMoreAnchor.setAttribute('data-page', this.currentPage);
-    this.elements.loadMoreAnchor.setAttribute('data-next-page', nextPageUrl);
 
     if (this.currentPage === this.maxPage) {
       this.handleUiWhenNoPosts();
@@ -176,14 +186,9 @@ class LoadMore extends elementorModules.frontend.handlers.Base {
   handlePostsQuery() {
     this.handleUiBeforeLoading();
     this.currentPage++;
-    const nextPageUrl = this.elements.loadMoreAnchor.getAttribute('data-next-page');
-    return fetch(nextPageUrl).then(response => response.text()).then(html => {
-      // Convert the HTML string into a document object
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, 'text/html');
-      this.handleSuccessFetch(doc);
-    }).catch(err => {
-      console.warn('Something went wrong.', err);
+    const restUrl = `${ElementorProFrontendConfig.urls.rest}elementor-pro/v1/posts-widget?post_id=${this.postId}&element_id=${this.elementId}&page=${this.currentPage}`;
+    return fetch(restUrl).then(response => response.json()).then(result => {
+      this.handleSuccessFetch(result);
     });
   }
 
@@ -194,4 +199,8 @@ exports["default"] = LoadMore;
 /***/ })
 
 }]);
+<<<<<<< HEAD:web/wp-content/plugins/elementor-pro/assets/js/load-more.ac40b4a3f37f08bbeba2.bundle.js
 //# sourceMappingURL=load-more.ac40b4a3f37f08bbeba2.bundle.js.map
+=======
+//# sourceMappingURL=load-more.ed8a8caa6411cba8ed86.bundle.js.map
+>>>>>>> 59e350e52aa59b5c4ddf95de67c26f79ffd0ba00:plugins/elementor-pro/assets/js/load-more.ed8a8caa6411cba8ed86.bundle.js

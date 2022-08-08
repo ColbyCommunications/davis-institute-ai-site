@@ -1,5 +1,9 @@
+<<<<<<< HEAD:web/wp-content/plugins/elementor-pro/assets/js/archive-posts.543f7a304d84538a71f2.bundle.js
 /*! elementor-pro - v3.6.4 - 15-03-2022 */
 "use strict";
+=======
+/*! elementor-pro - v3.4.1 - 01-09-2021 */
+>>>>>>> 59e350e52aa59b5c4ddf95de67c26f79ffd0ba00:plugins/elementor-pro/assets/js/archive-posts.1d5bae5aa38b8a799cbd.bundle.js
 (self["webpackChunkelementor_pro"] = self["webpackChunkelementor_pro"] || []).push([["archive-posts"],{
 
 /***/ "../modules/posts/assets/js/frontend/handlers/cards.js":
@@ -30,6 +34,7 @@ exports["default"] = _default;
 
 /***/ }),
 
+<<<<<<< HEAD:web/wp-content/plugins/elementor-pro/assets/js/archive-posts.543f7a304d84538a71f2.bundle.js
 /***/ "../modules/posts/assets/js/frontend/handlers/load-more.js":
 /*!*****************************************************************!*\
   !*** ../modules/posts/assets/js/frontend/handlers/load-more.js ***!
@@ -221,6 +226,8 @@ exports["default"] = LoadMore;
 
 /***/ }),
 
+=======
+>>>>>>> 59e350e52aa59b5c4ddf95de67c26f79ffd0ba00:plugins/elementor-pro/assets/js/archive-posts.1d5bae5aa38b8a799cbd.bundle.js
 /***/ "../modules/posts/assets/js/frontend/handlers/posts.js":
 /*!*************************************************************!*\
   !*** ../modules/posts/assets/js/frontend/handlers/posts.js ***!
@@ -398,6 +405,7 @@ exports["default"] = _default;
 
 /***/ }),
 
+<<<<<<< HEAD:web/wp-content/plugins/elementor-pro/assets/js/archive-posts.543f7a304d84538a71f2.bundle.js
 /***/ "../modules/theme-builder/assets/js/frontend/handlers/archive-posts-load-more.js":
 /*!***************************************************************************************!*\
   !*** ../modules/theme-builder/assets/js/frontend/handlers/archive-posts-load-more.js ***!
@@ -421,6 +429,8 @@ exports["default"] = ArchivePostsLoadMore;
 
 /***/ }),
 
+=======
+>>>>>>> 59e350e52aa59b5c4ddf95de67c26f79ffd0ba00:plugins/elementor-pro/assets/js/archive-posts.1d5bae5aa38b8a799cbd.bundle.js
 /***/ "../modules/theme-builder/assets/js/frontend/handlers/archive-posts-skin-cards.js":
 /*!****************************************************************************************!*\
   !*** ../modules/theme-builder/assets/js/frontend/handlers/archive-posts-skin-cards.js ***!
@@ -478,4 +488,8 @@ exports["default"] = _default;
 /***/ })
 
 }]);
+<<<<<<< HEAD:web/wp-content/plugins/elementor-pro/assets/js/archive-posts.543f7a304d84538a71f2.bundle.js
 //# sourceMappingURL=archive-posts.543f7a304d84538a71f2.bundle.js.map
+=======
+//# sourceMappingURL=archive-posts.1d5bae5aa38b8a799cbd.bundle.js.map
+>>>>>>> 59e350e52aa59b5c4ddf95de67c26f79ffd0ba00:plugins/elementor-pro/assets/js/archive-posts.1d5bae5aa38b8a799cbd.bundle.js
