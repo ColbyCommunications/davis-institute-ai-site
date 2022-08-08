@@ -72,7 +72,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ColbyCommunications/colby-davis-ai-theme.git",
-                "reference": "69fad70a93580ffb4e92fb7c7b1bdae143d96de6"
+                "reference": "f3f555141967406c7fbf77e000005d38ebeef384"
             },
             "require": {
                 "php": "^7.4|^8.0",
@@ -137,7 +137,7 @@
                 "issues": "https://github.com/roots/sage/issues",
                 "forum": "https://discourse.roots.io/"
             },
-            "time": "2022-08-08T16:38:51+00:00"
+            "time": "2022-08-08T17:42:39+00:00"
         },
         {
             "name": "colbycommunications/colby-ticket",
