@@ -33,13 +33,6 @@
     ],
     "repositories": [
         {
-<<<<<<< HEAD
-            "type": "git",
-            "url": "https://github.com/ColbyCommunications/colby-davis-ai-theme.git"
-        },
-        {
-=======
->>>>>>> d8cb7286ff3f34f0cf143111c57074b4f81b899a
             "type": "composer",
             "url": "https://wpackagist.org/"
         },
