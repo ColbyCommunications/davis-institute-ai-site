@@ -15,6 +15,14 @@ yarn
 yarn scripts:build
 cd -
 
+printf "Build Davis AI Theme... \n"
+cd web/wp-content/themes/colby-davis-ai-theme
+composer install
+composer dump-autoload
+yarn
+yarn scripts:build
+cd -
+
 
 # npm install
 shopt -u extglob
