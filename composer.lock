@@ -176,7 +176,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ColbyCommunications/colby-davis-ai-theme",
-                "reference": "28b8c8f0d317b51d1cfad965c20ed46f5bf5cc03"
+                "reference": "c97c6710bd9c4594cfcb607205c81109ff279213"
             },
             "require": {
                 "php": ">=7.1",
@@ -193,7 +193,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2025-07-15T20:26:24+00:00"
+            "time": "2025-07-16T12:20:10+00:00"
         },
         {
             "name": "colbycommunications/colby-ticket",
