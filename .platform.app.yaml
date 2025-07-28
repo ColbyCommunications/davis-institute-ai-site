@@ -1,5 +1,5 @@
 # This file describes an application. You can have multiple applications
-# in the same project..
+# in the same project.
 
 # The name of this app. Must be unique within a project.
 name: app
@@ -41,6 +41,8 @@ runtime:
 dependencies:
   php:
     composer/composer: "^2"
+  nodejs:
+    yarn: "*"
 
 # The hooks that will be performed when the package is deployed.
 hooks:

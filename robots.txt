@@ -10,3 +10,4 @@ Disallow: /tag/
 Disallow: /search/
 
 Sitemap: https://davisinstituteai.colby.edu/sitemap_index.xml
+
