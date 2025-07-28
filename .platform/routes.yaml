@@ -20,6 +20,22 @@
         '^/wp-admin/(.*)':
           to: "/wp/wp-admin/$1"
           regexp: true
+        '^/about/faculty/?$':
+          to: '/meet-the-team/'
+          regexp: true
+          code: 301
+        '^/about/staff/?$':
+          to: '/meet-the-team/'
+          regexp: true
+          code: 301
+        '^/about/students/?$':
+          to: '/meet-the-team/'
+          regexp: true
+          code: 301
+        '^/for-faculty-staff/?$':
+          to: '/for-faculty-and-staff/'
+          regexp: true
+          code: 301
 
 # *ALL* www.* requests should be redirected back to primary domain
 "https://www.{all}/":
