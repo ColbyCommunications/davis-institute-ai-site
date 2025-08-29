@@ -1,5 +1,6 @@
 <?php
 
+
 require_once 'vendor/autoload.php';
 
 $dotenv = Dotenv\Dotenv::createImmutable( __DIR__ );
@@ -18,23 +19,54 @@ if ( isset( $_SERVER['HTTP_HOST'] ) ) {
 }
 
 //do we have a multisite?
-if ( false !== getenv( 'MULTISITE' ) && filter_var( getenv( 'MULTISITE' ), FILTER_VALIDATE_BOOLEAN ) ) {
-	/**
-	 * Set up all the constants that we need for multisite
-	 */
-	define( 'MULTISITE', true );
-	define( 'WP_ALLOW_MULTISITE', true );
-	define( 'PATH_CURRENT_SITE', '/' );
-	define( 'SITE_ID_CURRENT_SITE', 1 );
-	define( 'BLOG_ID_CURRENT_SITE', 1 );
-	//DOMAIN_CURRENT_SITE intentionally not defined yet
-	/**
-	 * Do we have a multi/sub-domain set up or subdirectory?
-	 */
-	$boolMultiDomain = false; //assume default of subdirectory
-	if ( false !== getenv( 'MULTISITE_MULTIDOMAIN' ) && filter_var( getenv( 'MULTISITE_MULTIDOMAIN' ), FILTER_VALIDATE_BOOLEAN ) ) {
-		$boolMultiDomain = true;
-	}
+if (false !== getenv('MULTISITE') && filter_var(getenv('MULTISITE'), FILTER_VALIDATE_BOOLEAN)) {
+    /**
+     * Set up all the constants that we need for multisite
+     */
+    define('MULTISITE', true);
+    define('WP_ALLOW_MULTISITE', true);
+    define('PATH_CURRENT_SITE', '/');
+    define('SITE_ID_CURRENT_SITE', 1);
+    define('BLOG_ID_CURRENT_SITE', 1);
+    //DOMAIN_CURRENT_SITE intentionally not defined yet
+    /**
+     * Do we have a multi/sub-domain set up or subdirectory?
+     */
+    $boolMultiDomain = false; //assume default of subdirectory
+    if (false !== getenv('MULTISITE_MULTIDOMAIN') && filter_var(getenv('MULTISITE_MULTIDOMAIN'), FILTER_VALIDATE_BOOLEAN)) {
+        $boolMultiDomain = true;
+    }
+
+    define('SUBDOMAIN_INSTALL', $boolMultiDomain);
+} else {
+    define('MULTISITE', false);
+    define('SUBDOMAIN_INSTALL', false);
+}
+//are we on platform?
+if (false !== $strRelationships = getenv('PLATFORM_RELATIONSHIPS')) {
+    $site_scheme = 'https';//assume all sites on platform should be https
+    // This is where we get the relationships of our application dynamically from Platform.sh
+
+    // set session path to /tmp in cas we are using wp-cli to avoid notices
+    if (php_sapi_name() === 'cli') {
+        session_save_path("/tmp");
+    }
+
+    $relationships = json_decode(base64_decode(getenv('PLATFORM_RELATIONSHIPS')), true);
+
+    // We are using the first relationship called "database" found in your
+    // relationships. Note that you can call this relationship as you wish
+    // in you .platform.app.yaml file, but 'database' is a good name.
+    define('DB_NAME', $relationships['database'][0]['path']);
+    define('DB_USER', $relationships['database'][0]['username']);
+    define('DB_PASSWORD', $relationships['database'][0]['password']);
+    define('DB_HOST', $relationships['database'][0]['host']);
+    define('DB_CHARSET', 'utf8');
+    define('DB_COLLATE', '');
+
+    if (file_exists(dirname(__FILE__) . '/project/site_specific/config/wp-config-site.php')) {
+        include dirname(__FILE__) . '/project/site_specific/config/wp-config-site.php';
+    }
 
 	define( 'SUBDOMAIN_INSTALL', $boolMultiDomain );
 } else {
@@ -184,15 +216,6 @@ define( 'WP_CONTENT_URL', $strContentURL );
 // prefix.
 $table_prefix = 'wp_';
 
-/**
- * some plugins require constants be added to the wp-config.php file. Since this file is not changeable on a site-by-site
- * basis, will include a secondary file that is site-editable, allowing for additional constants or overriding of any
- * variables that have already been set (e.g. $table_prefix)
- */
-
-if ( file_exists( dirname( __FILE__ ) . '/wp-config-extras.php' ) ) {
-	include dirname( __FILE__ ) . '/wp-config-extras.php';
-}
 
 // Default PHP settings.
 ini_set( 'session.gc_probability', 1 );
