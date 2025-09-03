@@ -1,0 +1,11 @@
+{
+    "require": {
+        "colbycommunications/colby-davis-ai-theme": "dev-dev"
+    },
+    "repositories": [],
+    "extra": {
+        "installer-paths": {
+            "web/wp-content/mu-plugins/{$name}": []
+        }
+    }
+}
