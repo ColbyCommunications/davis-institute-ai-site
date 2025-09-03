@@ -14,3 +14,11 @@ yarn
 yarn scripts:build
 cd -
 
+printf "Build DAI Theme..."
+cd web/wp-content/themes/colby-davis-ai-theme
+composer install
+composer dump-autoload
+yarn
+yarn scripts:build
+cd -
+
