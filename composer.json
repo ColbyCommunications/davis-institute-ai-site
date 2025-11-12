@@ -26,7 +26,9 @@
         "wpackagist-plugin/wp-nested-pages": "3.2.13",
         "wpackagist-plugin/user-switching": "1.9.1",
         "colbycommunications/presspermit-pro": "4.3.2",
-        "wpackagist-plugin/advanced-gutenberg": "3.2.4"
+        "wpackagist-plugin/advanced-gutenberg": "3.2.4",
+        "colbycommunications/colby-davis-ai-theme": "dev-dev",
+        "wpackagist-plugin/tinymce-advanced": "5.9.2"
     },
     "authors": [
         {
@@ -35,6 +37,10 @@
         }
     ],
     "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/ColbyCommunications/colby-davis-ai-theme"
+        },
         {
             "type": "composer",
             "url": "https://wpackagist.org/"
