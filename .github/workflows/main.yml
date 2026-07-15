@@ -76,7 +76,7 @@ jobs:
 
       - name: Set Domain ENV
         run: |
-          echo "DOMAIN=www.$( upsun domains --format=plain --no-header --columns=name )" >> $GITHUB_ENV
+          echo "DOMAIN=davisinstituteai.colby.edu" >> $GITHUB_ENV
           echo $DOMAIN
 
       - name: Generate Sitemap
