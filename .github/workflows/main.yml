@@ -83,7 +83,7 @@ jobs:
         if: ${{ contains(env.DOMAIN, 'colby.edu')}}
         run: |
           ./scripts/sitemap_master.sh
-          flatten_sitemap --sitemap https://www.$( upsun domains --format=plain --no-header --columns=name )/sitemap_index.xml --config .github/sitemap.json --limit 25 --randomize
+          flatten_sitemap --sitemap https://davisinstituteai.colby.edu/sitemap_index.xml --config .github/sitemap.json --limit 25 --randomize
       
       - name: Generate Sitemap
         if: ${{ !contains(env.DOMAIN, 'colby.edu')}}
